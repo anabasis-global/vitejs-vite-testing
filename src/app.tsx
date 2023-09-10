@@ -24,10 +24,10 @@ export function App(dataSource: any) {
   const [count, setCount] = useState(1);
   const [data, setData] = useState(dataSource);
 
+  const updateData = async (currentData: any) => setData(currentData);
+  const getData = async (currentData: any) => {};
   return (
     <>
-      <h1>ITCS</h1>
-      <p>Messenger</p>
       <div class="card">
         <div className="message">
           <div className="message-heading">
