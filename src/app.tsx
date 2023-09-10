@@ -20,31 +20,37 @@ const subscription = dataSource
   // log: 2, 3, 4, 5, 6
   .subscribe((value) => console.log(value));
 
-export function App() {
-  const [count, setCount] = useState(0);
+export function App(dataSource: any) {
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState(dataSource);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
+      <h1>ITCS</h1>
+      <p>Messenger</p>
       <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
+        <div className="message">
+          <div className="message-heading">
+            <h4>Message text</h4>
+            <div className="time">13:00</div>
+          </div>
+
+          <p>Text</p>
+          <div className="message-footer">
+            <button>Send</button>
+          </div>
+        </div>
+        <div className="message">
+          <div className="message-heading">
+            <h4>Title</h4>
+            <div className="time">13:00</div>
+          </div>
+
+          <div className="message-footer">
+            <button>Open</button>
+          </div>
+        </div>
       </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
     </>
   );
 }
